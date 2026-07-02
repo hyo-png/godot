@@ -53,6 +53,7 @@ class VSplitContainer;
 class WindowWrapper;
 class EditorSyntaxHighlighter;
 class ScriptEditorBase;
+class GDScriptSyntaxHelp;
 
 class ScriptEditorQuickOpen : public ConfirmationDialog {
 	GDCLASS(ScriptEditorQuickOpen, ConfirmationDialog);
@@ -128,6 +129,7 @@ class ScriptEditor : public PanelContainer {
 		REPLACE_IN_FILES,
 
 		SEARCH_HELP,
+		SEARCH_SYNTAX_HELP,
 		SEARCH_WEBSITE,
 
 		// Theme.
@@ -160,10 +162,12 @@ class ScriptEditor : public PanelContainer {
 	PopupMenu *theme_submenu = nullptr;
 
 	Button *help_search = nullptr;
+	Button *syntax_help = nullptr;
 	Button *site_search = nullptr;
 	Button *make_floating = nullptr;
 	bool is_floating = false;
 	EditorHelpSearch *help_search_dialog = nullptr;
+	GDScriptSyntaxHelp *gdscript_syntax_help = nullptr;
 
 	ItemList *script_list = nullptr;
 	HSplitContainer *script_split = nullptr;
